@@ -1,35 +1,51 @@
-body {
+*{
     margin: 0;
     padding: 0;
 }
-
+html{
+    scroll-behavior: smooth;
+}
+.section{
+    background-color: lightgray;
+    padding-top: 50px;
+}
+.section2{
+    background-color: lightgray;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+.container{
+    margin: auto;
+    max-width: 600px;
+    width: 100%;
+    background-color:white;
+    padding: 0px 50px 20px 50px
+}
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f1f1f1;
+    background-color:black;
 }
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
 }
-
-nav li {
-    float: left;
-}
-
-nav li a {
-    display: block;
+li{
     padding: 10px;
     text-decoration: none;
-    color: #333;
+    list-style: none;
 }
-
+li a{
+    color: white;
+    padding: 10px;
+    text-decoration: none; 
+    font-size: 18px;
+}
 nav li a:hover {
-    background-color: #ddd;
+ color: blue;
 }
 
 h2 {
@@ -45,7 +61,8 @@ th,
 td {
     padding: 8px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border: 1px solid #ddd;
+    font-size: 16px;
 }
 
 .nested-table {
@@ -56,6 +73,26 @@ td {
     padding: 2px 8px;
 }
 
-.nested-table td:first-child {
-    font-weight: bold;
-}
+.form-group {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  .input{
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    padding: 8px 16px;
+    width: 102%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
