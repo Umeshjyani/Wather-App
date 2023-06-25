@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,60 +8,148 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header class="sticky">
-        <nav>
-          <ul>
-            <li><a href="#books">Books</a></li>
-            <li><a href="#register">Register</a></li>
-          </ul>
+        <nav class="nav">
+             <div><li><a href="#books">Library System</a></li></div>
+                <div class="nav">
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#register">Register</a></li>
+                    <li><a href="#books">Contact Us</a></li>
+                    <li><a href="#books">Logout</a></li>
+                </div>
         </nav>
-      </header>
-    
-      <section id="books">
-        <h2>Books</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Book ID</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Genre</th>
-              <th>Availability</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>
-                <table class="nested-table">
-                  <tr>
-                    <td>Publication Date:</td>
-                    <td>June 1, 2022</td>
-                  </tr>
-                  <tr>
-                    <td>Page Count:</td>
-                    <td>300</td>
-                  </tr>
-                  <tr>
-                    <td>ISBN:</td>
-                    <td>978-0-123456-78-9</td>
-                  </tr>
+    </header>
+    <div>
+        <section id="books" class="section">
+            <div class="container">
+                <h2 style="padding:15px 0px;">Books</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Book ID</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>
+                                <table class="nested-table">
+                                    <a href="">Book Title 1</a><br><br>
+                                    <tr>
+                                        <td>Publication Date: 2000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Page Count: 250</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISBN: 123-4567890123</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>Author Name 1</td>
+                            <td>Genre 1</td>
+                            <td>Available</td>
+                        </tr>
+                        <!-- Add more rows with data here -->
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <table class="nested-table">
+                                    <a href="">Book Title 2</a><br><br>
+                                    <tr>
+                                        <td>Publication Date: 2005</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Page Count: 300</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISBN: 123-4567890456</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>Author Name 2</td>
+                            <td>Genre 2</td>
+                            <td>Not Available</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>
+                                <table class="nested-table">
+                                    <a href="">Book Title 3</a><br><br>
+                                    <tr>
+                                        <td>Publication Date: 2010</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Page Count: 250</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ISBN: 123-4567890789</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>Author Name 3</td>
+                            <td>Genre 3</td>
+                            <td>Available</td>
+                        </tr>
+                    </tbody>
                 </table>
-              </td>
-              <td>John Doe</td>
-              <td>Fiction</td>
-              <td>Available</td>
-            </tr>
-            <!-- Add more rows with data here -->
-          </tbody>
-        </table>
-      </section>
-    
-      <section id="register">
-        <h2>Register</h2>
-        <!-- Your registration form here -->
-      </section>
+            </div>
+        </section>
+        <div>
+            <section id="register" class="section2">
+                <div class="container">
+                    <h2 style="padding:10px 0px;">Register</h2>
+    <form>
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required class="input" required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="5" max="100" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required required class="input">
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+                </div>
+                <!-- Your registration form here -->
+            </section>
+        </div>
 </body>
 <script src="assets/javascript/script.js"></script>
+
 </html>
