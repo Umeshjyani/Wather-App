@@ -3,7 +3,7 @@ const addButton = document.getElementById('addButton');
 const cityInput = document.getElementById('cityInput');
 const weatherCards = document.getElementById('weatherCards');
 
-let cities = new Set();
+let cities = new Set(getSavedCities());
 
 addButton.addEventListener('click', () => {
     const cityName = cityInput.value.trim();
@@ -21,12 +21,23 @@ addButton.addEventListener('click', () => {
     fetchWeatherData(cityName)
         .then((data) => {
             cities.add(cityName);
+            saveCitiesToLocalStorage(Array.from(cities));
             createWeatherCard(data);
         })
         .catch((error) => {
             alert('Failed to fetch weather data. Please try again later.');
         });
 });
+
+function getSavedCities() {
+    const savedCitiesJSON = localStorage.getItem('cities');
+    return savedCitiesJSON ? JSON.parse(savedCitiesJSON) : [];
+}
+
+function saveCitiesToLocalStorage(citiesArray) {
+    const citiesJSON = JSON.stringify(citiesArray);
+    localStorage.setItem('cities', citiesJSON);
+}
 
 async function fetchWeatherData(cityName) {
     // const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
@@ -44,6 +55,16 @@ async function fetchWeatherData(cityName) {
     } catch (error) {
         throw new Error(`Failed to fetch weather data: ${error.message}`);
     }
+}
+
+function loadSavedCitiesWeather() {
+    cities.forEach((city) => {
+        fetchWeatherData(city)
+            .then((data) => createWeatherCard(data))
+            .catch((error) => {
+                console.log(`Failed to fetch weather data for ${city}.`);
+            });
+    });
 }
 
 function createWeatherCard(data) {
@@ -99,3 +120,7 @@ function getWeatherIconURL(iconCode) {
 function getTemperature(temperatureString) {
     return parseFloat(temperatureString.match(/[\d.-]+/)[0]);
 }
+
+window.addEventListener('load', () => {
+    loadSavedCitiesWeather();
+});
