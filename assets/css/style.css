@@ -1,98 +1,62 @@
-*{
-    margin: 0;
-    padding: 0;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #302858;
+    color: white !important;
 }
-html{
-    scroll-behavior: smooth;
+
+h1 {
+    text-align: center;
 }
-.section{
-    background-color: lightgray;
-    padding-top: 50px;
-}
-.section2{
-    background-color: lightgray;
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-.container{
-    margin: auto;
+
+.container {
     max-width: 600px;
-    width: 100%;
-    background-color:white;
-    padding: 0px 50px 20px 50px
+    margin: 0 auto;
+    padding: 20px;
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color:black;
-}
-.nav{
+
+.input-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 20px;
+    margin-bottom: 10px;
 }
-li{
-    padding: 10px;
-    text-decoration: none;
-    list-style: none;
+
+.input-container input {
+    flex: 1;
+    padding: 5px;
 }
-li a{
-    color: white;
+
+.input-container button {
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+
+.weather-card {
+    border: 1px solid #ccc;
     padding: 10px;
-    text-decoration: none; 
+    margin-bottom: 10px;
+    background-color: #48309d;
+}
+
+.weather-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.weather-card .city {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.weather-card .temperature {
     font-size: 18px;
-}
-nav li a:hover {
- color: blue;
+    margin-bottom: 5px;
 }
 
-h2 {
-    margin-top: 40px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-th,
-td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd;
+.weather-card .condition {
     font-size: 16px;
 }
 
-.nested-table {
-    border-collapse: collapse;
+.weather-card .details {
+    font-size: 14px;
+    margin-top: 5px;
 }
-
-.nested-table td {
-    padding: 2px 8px;
-}
-
-.form-group {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-  }
-  
-  .input{
-    width: 100%;
-    padding: 7px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button[type="submit"] {
-    padding: 8px 16px;
-    width: 102%;
-    background-color: black;
-    color: white;
-    text-align: center;
-    cursor: pointer;
-  }
